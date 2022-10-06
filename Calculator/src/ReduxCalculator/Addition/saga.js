@@ -1,22 +1,19 @@
 import { delay, put, takeLatest } from "redux-saga/effects";
-import { addFailed, addSuccess } from "./sagaCalculatorSlice";
+import { addFailed, addSuccess } from "./slice";
 
-function* addNumberAction(actions) {
+function* additionNumAction(actions) {
   try {
     const { num1, num2 } = actions.payload;
-
-    // yield fakeAPI();
     yield delay(3000);
 
     const result = +num1 + +num2;
 
     yield put(addSuccess({ result }));
     return;
-  } catch (e) {
+  } catch (error) {
     yield put(addFailed());
   }
 }
-
-export function* watchAddNumberAction() {
-  yield takeLatest("SagaCalculator/add", addNumberAction);
+export function* watchAdditionNumAction() {
+  yield takeLatest("SagaAddition/add", additionNumAction);
 }

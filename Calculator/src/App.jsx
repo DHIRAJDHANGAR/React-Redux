@@ -4,6 +4,8 @@ import store from "./Redux/store";
 import ParentComp from "./Calculator";
 import MeraCalculator from "./ReduxToolkit/Calculator";
 import SagaCalculator from "./SagaCalculator";
+import ReduxSagaCalculator from "./ReduxCalculator";
+import APICall from "./APICall";
 
 function App() {
   return (
@@ -13,7 +15,10 @@ function App() {
         {/* <ParentComp /> */}
         {/**Calculatore from react toolkit */}
         {/* <MeraCalculator /> */}
-        <SagaCalculator />
+        {/* <SagaCalculator /> */}
+        {/**Redux Saga Calcluator */}
+        {/* <ReduxSagaCalculator /> */}
+        <APICall />
       </Provider>
     </>
   );
